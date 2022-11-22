@@ -1,4 +1,53 @@
 <h2> Componente Personal: </h2>
-<p>{{nombre}}</p>
-<p> {{edad}}</p>
-<p>{{isAdmin}}</p>
+<p>{{empleado.nombre}}</p>
+<p> {{empleado.edad}}</p>
+<p>{{empleado.isAdmin}}</p>
+
+<strong>Empleado estrella</strong>
+
+<div *ngIf="trabajadorExterno">
+  <button (click)="cambiarExterno(false)">Mostrar Empleado</button>
+  <ul>
+    <li>{{trabajadores[0].nombre}}</li>
+    <li>{{trabajadores[0].edad}}</li>
+  </ul>
+</div>
+
+<div *ngIf="!trabajadorExterno">
+  <button (click)="cambiarExterno(true)">Mostrar Empleado</button>
+  <ul>
+    <li>{{trabajadores[1].nombre}}</li>
+    <li>{{trabajadores[1].edad}}</li>
+  </ul>
+</div>
+
+<strong>Listado de empleados</strong>
+
+<div *ngFor=" let trabajador of trabajadores; let i = index">
+  <strong> Trabajador {{i+1}}
+    <ul>
+      <li>{{trabajador.nombre}}</li>
+      <li>{{trabajador.edad}}</li>
+    </ul>
+  </strong>
+</div>
+
+<h3>Colores switch</h3>
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'red'" [ngStyle]="{
+    'background': color,
+    'color': 'white',
+    'padding': '20px'
+  }">Es de color rojo</li>
+  <li *ngSwitchCase="'blue'" [ngStyle]="{
+    'background': color,
+    'color': 'white',
+    'padding': '20px'
+  }">Es de color azul</li>
+  <li *ngSwitchCase="'yellow'" [ngStyle]="{
+    'background': color,
+    'color': 'white',
+    'padding': '20px'
+  }">Es de color amarillo</li>
+</ul>
+
