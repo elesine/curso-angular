@@ -1,7 +1,7 @@
 <p>coches works!</p>
 
 <form #formCoche="ngForm" (ngSubmit)="onSubmit(formCoche)">
-   <!-- formCoche.reset(); -->
+  <!-- formCoche.reset(); -->
   <p>
     <label>Nombre</label>
     <input
@@ -63,4 +63,14 @@
       {{ coche.contratado }}
     </li>
   </ul>
+</div>
+
+<div>
+  <h3>Listado de artículos</h3>
+  <ul *ngIf="articulos">
+    <li *ngFor="let articulo of articulos">
+      {{ articulo.id }} - {{ articulo.title }} - {{ articulo.body }}
+    </li>
+  </ul>
+  <span *ngIf="!articulos">Cargando ...</span>
 </div>
