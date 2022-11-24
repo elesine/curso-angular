@@ -1,0 +1,66 @@
+<p>coches works!</p>
+
+<form #formCoche="ngForm" (ngSubmit)="onSubmit(formCoche)">
+   <!-- formCoche.reset(); -->
+  <p>
+    <label>Nombre</label>
+    <input
+      type="text"
+      name="nombre"
+      #nombre="ngModel"
+      [(ngModel)]="coche.nombre"
+      pattern="[A-Za-z]{2,10}"
+      required
+    />
+    <span *ngIf="nombre.touched && !nombre.valid">El nombre no es válido</span>
+  </p>
+
+  <p>
+    <label>Caballaje</label>
+    <input
+      type="number"
+      name="caballaje"
+      #caballaje="ngModel"
+      [(ngModel)]="coche.caballaje"
+      pattern="[0-5]"
+      required
+    />
+    <span *ngIf="caballaje.touched && !caballaje.valid"
+      >El caballaje está fuera de rango</span
+    >
+  </p>
+
+  <p>
+    <label>Color</label>
+    <input
+      type="text"
+      name="color"
+      #color="ngModel"
+      [(ngModel)]="coche.color"
+      required
+    />
+  </p>
+
+  <p>
+    <label>Contratado</label>
+    <input
+      type="boolean"
+      name="contratado"
+      #contratado="ngModel"
+      [(ngModel)]="coche.contratado"
+      required
+    />
+  </p>
+
+  <input type="submit" value="Guardar" [disabled]="!formCoche.form.valid" />
+</form>
+
+<div>
+  <h3>Listado de coches</h3>
+  <ul>
+    <li *ngFor="let coche of coches">
+      {{ coche.nombre }} - {{ coche.caballaje }} - {{ coche.color }} -
+      {{ coche.contratado }}
+    </li>
+  </ul>
+</div>

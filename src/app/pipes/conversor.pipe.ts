@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ConversorPipe implements PipeTransform {
 
-  transform(value: any, por: any): string {
+  transform(value: number, por: number): string {
     let value1 = (value);
     let value2 = (por);
 
