@@ -10,6 +10,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ConversorPipe } from './pipes/conversor.pipe';
 import { CochesComponent } from './coches/coches.component';
 import {  HttpClientModule } from '@angular/common/http';
+import { PlantillasComponent } from './plantillas/plantillas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import {  HttpClientModule } from '@angular/common/http';
     ContactoComponent,
     ConversorPipe,
     CochesComponent,
+    PlantillasComponent,
 
   ],
   imports: [

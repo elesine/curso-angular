@@ -1,0 +1,20 @@
+<p>plantillas works!</p>
+
+<!-- <div *ngIf="administrador">
+  <strong style="background: green"> Eres el administrador </strong>
+</div>
+<div *ngIf="!administrador">
+  <strong style="background: red"> No eres el administrador </strong>
+</div> -->
+
+<div *ngIf="administrador; then admin else noAdmin"></div>
+
+<ng-template #admin>
+  <button (click)="cambiarEstado(false)">Cambiar</button>
+  <strong style="background: green"> Eres el administrador </strong>
+</ng-template>
+
+<ng-template #noAdmin>
+  <button (click)="cambiarEstado(true)">Cambiar</button>
+  <strong style="background: red"> No eres el administrador </strong>
+</ng-template>
