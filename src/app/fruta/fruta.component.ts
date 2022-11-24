@@ -10,7 +10,7 @@ export class FrutaComponent{
   public parametro:any;
   constructor(
      private route: ActivatedRoute,
-     private _router: Router
+     private router: Router
   ){}
 
   ngOnInit(){
@@ -21,6 +21,6 @@ export class FrutaComponent{
   }
 
   redirectTo(){
-    this._router.navigate(['/home']);
+    this.router.navigate(['/home']);
   }
 }
