@@ -15,12 +15,14 @@ export class PlantillasComponent {
     tematica: 'web programming'
   };
   public datosDelHijo: any;
+  public color: string;
 
 
   constructor(){
     this.titulo = "Componente Plantillas";
     this.administrador = true;
     this.datosDelHijo = '';
+    this.color = "yellow";
   }
 
   cambiarEstado(value: boolean){

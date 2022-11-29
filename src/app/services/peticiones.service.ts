@@ -1,14 +1,8 @@
 import { Injectable } from '@angular/core';
-// import {Http, Response, Headers} from '@angular/http';
-import {HttpClient, HttpParams, HttpHeaders} from  '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from  '@angular/common/http';
 // import { HttpClientModule } from '@angular/common/http';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/Rx';
-// import { Observable, pipe, throwError } from 'rxjs';
-// import { catchError, retry,  filter, switchMap} from 'rxjs/operators';
-import { map } from "rxjs/operators";
-import {Observable} from 'rxjs';
-import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
+import { map } from "rxjs";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
