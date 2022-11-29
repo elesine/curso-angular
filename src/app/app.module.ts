@@ -9,8 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ConversorPipe } from './pipes/conversor.pipe';
 import { CochesComponent } from './coches/coches.component';
-import {  HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PlantillasComponent } from './plantillas/plantillas.component';
+import { HijoComponent } from './hijo/hijo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { PlantillasComponent } from './plantillas/plantillas.component';
     ConversorPipe,
     CochesComponent,
     PlantillasComponent,
+    HijoComponent,
 
   ],
   imports: [

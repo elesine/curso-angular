@@ -7,7 +7,7 @@
   <strong style="background: red"> No eres el administrador </strong>
 </div> -->
 
-<div *ngIf="administrador; then admin else noAdmin"></div>
+<div *ngIf="administrador; then admin; else noAdmin"></div>
 
 <ng-template #admin>
   <button (click)="cambiarEstado(false)">Cambiar</button>
@@ -18,3 +18,19 @@
   <button (click)="cambiarEstado(true)">Cambiar</button>
   <strong style="background: red"> No eres el administrador </strong>
 </ng-template>
+
+<!-- Comunicación entre componentes -->
+<p>--- Comunicación entre componentes ---</p>
+<hijo
+  [propiedadUno] = "'Esta es la propiedad uno'"
+  [texto2] = "'Esta es la propiedad dos'"
+  [texto3] = "datoExterno"
+  [texto4] = "identity.web"
+  (desdeElHijo) = "recibirDatos($event)"
+>
+</hijo>
+<div *ngIf="datosDelHijo.nombre">
+  <h3>Datos del componente Hijo</h3>
+  <h4>{{datosDelHijo.nombre}}</h4>
+  <h4>{{datosDelHijo.edad}}</h4>
+</div>

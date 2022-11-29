@@ -27,6 +27,8 @@ export class CochesComponent {
     console.log("INICIO Componente coches")
     console.log(this.peticionesService.getArticulos().subscribe(
       result => {
+        console.log( "RESULT", result)
+
         this.articulos = result;
         console.log( "RESULT", result)
       },
